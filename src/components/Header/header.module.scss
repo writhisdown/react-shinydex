@@ -1,0 +1,39 @@
+.header-container,
+.header,
+.header__end {
+  display: flex;
+}
+
+.header-container,
+.header {
+  align-items: center;
+}
+
+.header-container {
+  width: var(--size-full);
+  height: 5rem; // 80px
+  padding-inline: var(--spacing-md);
+  justify-content: center;
+  background: var(--clr-white);
+  // option: 2px 2px 12px hsla(0,0%,44%,.25)
+  box-shadow: 2px 2px 12px var(--clr-shadow); 
+}
+
+.header {
+  justify-content: space-between;
+  max-width: var(--size-content);
+  width: 100%;
+}
+
+.header__start,
+.header__end {
+  flex: 1;
+}
+
+.header__end {
+  justify-content: end;
+}
+
+.header_search {
+
+}
