@@ -43,6 +43,7 @@
 :root {
   --clr-blue: hsl(209, 84%, 59%);
   --clr-red: hsl(7, 100%, 63%);
+  --clr-pink: hsl(6, 100%, 92%);
   --clr-yellow: hsl(50, 100%, 63%);
   --clr-black: hsl(0, 0%, 16%);
   --clr-white: hsl(0, 0%, 100%);
@@ -70,19 +71,22 @@
   --text-light-xs: 300 .8rem/120% "Lato", system-ui, serif;
   --text-light-sm: 300 .875rem/120% "Lato", system-ui, serif;
   --text-light-base: 300 1rem/120% "Lato", system-ui, serif;
-  --text-light-medium: 300 1.5rem/120% "Lato", system-ui, serif;
+  --text-light-md: 300 1.5rem/120% "Lato", system-ui, serif;
   --text-base-xs: 400 .8rem/120% "Lato", system-ui, serif;
   --text-base-sm: 400 .875rem/120% "Lato", system-ui, serif;
   --text-base: 400 1rem/120% "Lato", system-ui, serif;
-  --text-base-medium: 400 1.5rem/120% "Lato", system-ui, serif;
+  --text-base-md: 400 1.5rem/120% "Lato", system-ui, serif;
   --text-semi-xs: 700 .8rem/120% "Lato", system-ui, serif;
   --text-semi-sm: 700 .875rem/120% "Lato", system-ui, serif;
   --text-semi-base: 700 1rem/120% "Lato", system-ui, serif;
-  --text-semi-medium: 700 1.5rem/120% "Lato", system-ui, serif;
+  --text-semi-md: 700 1.5rem/120% "Lato", system-ui, serif;
+  --text-semi-lg: 700 2rem/120% "Lato", system-ui, serif;
   --text-bold-xs: 900 .8rem/120% "Lato", system-ui, serif;
   --text-bold-sm: 900 .875rem/120% "Lato", system-ui, serif;
   --text-bold-base: 900 1rem/120% "Lato", system-ui, serif;
-  --text-bold-medium: 900 1.5rem/120% "Lato", system-ui, serif;
+  --text-bold-md: 900 1.5rem/120% "Lato", system-ui, serif;
+  --text-bold-lg: 900 2rem/120% "Lato", system-ui, serif;
+  --text-display: 700 2.5rem/120% "Lato", system-ui, serif;
   --size-full: 100%;
   --size-screen: 100svh;
   --size-content: 90rem; // 1440px
@@ -95,6 +99,7 @@
   --spacing-md: 1.5rem; // 24px
   --spacing-lg: 2rem; // 32px
   --spacing-xl: 3rem; // 48px
+  --spacing-xxl: 4rem; // 64px
   --spacing-section: 8rem; // 128px
 }
 
@@ -102,4 +107,9 @@ body {
   color: var(--clr-black);
   background: var(--clr-background);
   font: var(--text-base);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--clr-red);
+  outline-offset: 2px;
 }

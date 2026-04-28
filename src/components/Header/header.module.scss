@@ -1,11 +1,9 @@
-.header-container,
-.header,
-.header__end {
-  display: flex;
-}
+@use "../../styles/breakpoints.scss" as *;
 
 .header-container,
-.header {
+.header,
+.header__start {
+  display: flex;
   align-items: center;
 }
 
@@ -23,17 +21,46 @@
   justify-content: space-between;
   max-width: var(--size-content);
   width: 100%;
+  column-gap: var(--spacing-sm);
 }
 
-.header__start,
-.header__end {
-  flex: 1;
+.header__start {
+  column-gap: var(--spacing-xs);
 }
 
-.header__end {
-  justify-content: end;
+.header__badge,
+.header__link--desktop {
+  display: none;
 }
 
-.header_search {
+.header__badge {
+  @include screen-sm {
+    display: inline-block;
+  }
+}
 
+.header__link {
+  transition: color 750ms cubic-bezier(.4, 0, .2, 1);
+
+  &:hover {
+    color: var(--clr-red);
+  }
+}
+
+.header__link--desktop {
+  align-items: center;
+  column-gap: var(--spacing-xs);
+  font: var(--text-semi-base);
+
+  @include screen-sm {
+    display: flex;
+  }
+}
+
+.header__link--mobile {
+  display: block;
+
+  @include screen-sm {
+    display: none;
+  }
 }

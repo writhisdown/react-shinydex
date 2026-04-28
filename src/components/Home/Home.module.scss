@@ -1,0 +1,30 @@
+@use "../../styles/breakpoints.scss" as *;
+
+$linear-gradient-start: hsla(192, 80%, 51%, 1);
+$linear-gradient-end: hsla(355, 85%, 63%, 1);
+// start: hsla(197, 100%, 63%, 1)
+// end: hsla(294, 100%, 55%, 1)
+
+.heading-container {
+  width: 100%;
+  padding-block: var(--spacing-xxl);
+}
+
+.heading {
+  text-align: center;
+  font: var(--text-semi-md);
+  
+  @include screen-xs {
+    font: var(--text-semi-lg);
+  }
+
+  @include screen-sm {
+    font: var(--text-display);
+  }
+
+  span {
+    background: linear-gradient(90deg, $linear-gradient-start 0%, $linear-gradient-end 100%);
+    background-clip: text;
+    color: transparent;
+  }
+}

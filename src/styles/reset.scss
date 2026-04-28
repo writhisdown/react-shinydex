@@ -81,6 +81,10 @@
     color: inherit;
   }
 
+  a:focus {
+    outline-color: transparent;
+  }
+
   img,
   svg,
   video,
