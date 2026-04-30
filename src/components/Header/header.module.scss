@@ -1,13 +1,13 @@
 @use "../../styles/breakpoints.scss" as *;
 
-.header-container,
 .header,
-.header__start {
+.header__nav,
+.header__nav-start {
   display: flex;
   align-items: center;
 }
 
-.header-container {
+.header {
   width: var(--size-full);
   height: 5rem; // 80px
   padding-inline: var(--spacing-md);
@@ -17,29 +17,29 @@
   box-shadow: 2px 2px 12px var(--clr-shadow); 
 }
 
-.header {
+.header__nav {
   justify-content: space-between;
   max-width: var(--size-content);
   width: 100%;
   column-gap: var(--spacing-sm);
 }
 
-.header__start {
+.header__nav-start {
   column-gap: var(--spacing-xs);
 }
 
-.header__badge,
-.header__link--desktop {
+.header__nav-badge,
+.header__nav-link--desktop {
   display: none;
 }
 
-.header__badge {
+.header__nav-badge {
   @include screen-sm {
     display: inline-block;
   }
 }
 
-.header__link {
+.header__nav-link {
   transition: color 750ms cubic-bezier(.4, 0, .2, 1);
 
   &:hover {
@@ -47,7 +47,7 @@
   }
 }
 
-.header__link--desktop {
+.header__nav-link--desktop {
   align-items: center;
   column-gap: var(--spacing-xs);
   font: var(--text-semi-base);
@@ -57,7 +57,7 @@
   }
 }
 
-.header__link--mobile {
+.header__nav-link--mobile {
   display: block;
 
   @include screen-sm {
