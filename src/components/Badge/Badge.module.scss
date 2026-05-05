@@ -1,7 +1,88 @@
 .badge {
   border-radius: 8px;
-  background-color: var(--clr-pink);
-  color: var(--clr-fighting);
   padding: var(--spacing-xxs) var(--spacing-xs);
   font: var(--text-semi-sm);
+
+  &--default {
+    background-color: var(--clr-pink);
+    color: var(--clr-fighting);
+  }
+  
+  &--dragon,
+  &--dark,
+  &--fighting,
+  &--poison,
+  &--ghost,
+  &--rock {
+    color: var(--clr-white);
+  }
+
+  &--ground {
+    background-color: var(--clr-ground);
+  }
+
+  &--rock {
+    background-color: var(--clr-rock);
+  }
+
+  &--grass {
+    background-color: var(--clr-grass);
+  }
+
+  &--fire {
+    background-color: var(--clr-fire);
+  }
+
+  &--water {
+    background-color: var(--clr-water);
+  }
+
+  &--electric {
+    background-color: var(--clr-electric);
+  }
+
+  &--flying {
+    background-color: var(--clr-flying);
+  }
+
+  &--dragon {
+    background-color: var(--clr-dragon);
+  }
+
+  &--psychic {
+    background-color: var(--clr-psychic);
+  }
+
+  &--ghost {
+    background-color: var(--clr-ghost);
+  }
+
+  &--poison {
+    background-color: var(--clr-poison);
+  }
+
+  &--steel {
+    background-color: var(--clr-steel);
+  }
+
+  &--normal {
+    background-color: var(--clr-normal);
+  }
+
+  &--ice {
+    background-color: var(--clr-ice);
+  }
+
+  &--fairy {
+    background-color: var(--clr-fairy);
+  }
+
+  &--bug {
+    background-color: var(--clr-bug);
+  }
+
+  &--dark {
+    background-color: var(--clr-dark);
+  }
 }
+

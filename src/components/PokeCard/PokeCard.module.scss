@@ -1,0 +1,47 @@
+$shadow: 2px 2px 12px var(--clr-shadow);
+
+.poke-card {
+  text-align: center;
+  border-radius: 1.25rem; // 20px
+  padding: var(--spacing-md) var(--spacing-sm);
+  background: var(--clr-white);
+  animation: fadeIn 800;
+
+  &:hover {
+    box-shadow: $shadow;
+  }
+}
+
+.poke-card:hover .poke-card__image {
+  display: none;
+}
+
+.poke-card__image-alt {
+  display: none;
+}
+
+.poke-card:hover .poke-card__image-alt {
+  display: block;
+}
+
+.poke-card__id {
+  font: var(--text-bold-xs);
+  color: var(--clr-grey);
+}
+
+.poke-card__name {
+  font: var(--text-bold-md);
+  text-transform: capitalize;
+  margin-top: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+}
+
+.poke-card__type {
+  display: flex;
+  align-items: center;
+}
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
