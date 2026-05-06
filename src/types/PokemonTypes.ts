@@ -1,5 +1,10 @@
 type PokemonTypes = "ground" | "rock" | "grass" | "fire" | "water" | "electric" |"flying" | "dragon" | "psychic" | "ghost" | "poison" | "steel" | "normal" | "ice" | "fighting" | "fairy" | "bug" | "dark";
 
+type PokemonTypePayload = {
+  slot: number,
+  type: {name: string, url: string}
+}
+
 type Pokemon = {
   id: number,
   name: string,
@@ -8,4 +13,4 @@ type Pokemon = {
   type: string[]
 }
 
-export {type PokemonTypes, type Pokemon};
+export {type PokemonTypePayload, type PokemonTypes, type Pokemon};

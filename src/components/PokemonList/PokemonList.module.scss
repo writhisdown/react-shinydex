@@ -1,9 +1,11 @@
 @use "../../styles/breakpoints.scss" as *;
 
 .pokemon {
+  margin-top: var(--spacing-xxl);
   max-width: var(--size-content);
   width: var(--size-full);
   display: grid;
+  justify-self: center;
   grid-template-columns: repeat(1, 1fr);
   gap: var(--spacing-md);
   

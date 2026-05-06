@@ -1,32 +1,60 @@
+@use "../../styles/breakpoints.scss" as *;
+
 $shadow: 2px 2px 12px var(--clr-shadow);
 
+.poke-card,
+.poke-card__type,
+.poke-card__id {
+  display: flex;
+}
+
+.poke-card,
+.poke-card__type {
+  align-items: center;
+}
+
 .poke-card {
-  text-align: center;
+  flex-direction: column;
   border-radius: 1.25rem; // 20px
   padding: var(--spacing-md) var(--spacing-sm);
   background: var(--clr-white);
   animation: fadeIn 800;
+}
 
-  &:hover {
+@media (hover: hover) {
+  .poke-card:hover {
     box-shadow: $shadow;
+  }
+
+  .poke-card:hover .poke-card__image {
+    display: none;
+  }
+
+  .poke-card:hover .poke-card__image-alt {
+    display: block;
   }
 }
 
-.poke-card:hover .poke-card__image {
+.poke-card__image {
   display: none;
+
+  @include screen-sm {
+    display: block;
+  }
 }
 
 .poke-card__image-alt {
-  display: none;
-}
-
-.poke-card:hover .poke-card__image-alt {
   display: block;
+
+  @include screen-sm {
+    display: none;
+  }
 }
 
 .poke-card__id {
-  font: var(--text-bold-xs);
+  font: var(--text-bold-base);
   color: var(--clr-grey);
+  column-gap: var(--spacing-xxs);
 }
 
 .poke-card__name {
@@ -37,11 +65,18 @@ $shadow: 2px 2px 12px var(--clr-shadow);
 }
 
 .poke-card__type {
-  display: flex;
-  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.leading-zero-one::before {
+  content: "0";
+}
+
+.leading-zero-two::before {
+  content: "00"
 }
 
 @keyframes fadeIn {
-    0% {opacity:0;}
-    100% {opacity:1;}
+  0% {opacity:0;}
+  100% {opacity:1;}
 }
