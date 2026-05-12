@@ -43,7 +43,7 @@ export default function PokeCard({ data }: {data: Pokemon}) {
           {id}
         </span>
       </div>
-      <h2 className={styles["poke-card__name"]}>{name}</h2>
+      <h3 className={styles["poke-card__name"]}>{name}</h3>
       <div className={styles["poke-card__type"]}>
         <VisuallyHidden>Pokemon type</VisuallyHidden>
         {type.map((types: PokemonTypes) => (

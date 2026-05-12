@@ -81,7 +81,8 @@
     color: inherit;
   }
 
-  a:focus {
+  a:focus,
+  button:focus {
     outline-color: transparent;
   }
 

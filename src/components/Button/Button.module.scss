@@ -1,0 +1,42 @@
+$button-size-base: 3rem; // 48px
+$button-radius-base: .75rem; // 12px
+$button-shadow: 2px 2px 12px var(--clr-shadow);
+$button-transition: 800ms cubic-bezier(.4, 0, .2, 1);
+
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: var(--spacing-xs);
+  height: $button-size-base;
+  min-width: $button-size-base;
+  width: fit-content;
+  padding-inline: var(--spacing-sm);
+  white-space: nowrap;
+  border-radius: $button-radius-base;
+  background: var(--clr-white);
+  color: var(--clr-black);
+  font: var(--text-semi-base);
+  
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    box-shadow: $button-shadow;
+    opacity: 0;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+  
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.button,
+.button::before {
+  transition: transform $button-transition;
+}
