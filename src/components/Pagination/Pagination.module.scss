@@ -23,3 +23,12 @@ $pagination-width: 50rem; // 800px
   display: flex;
   justify-content: end;
 }
+
+.active {
+  --button-bg: var(--clr-blue);
+  --button-color: var(--clr-white);
+}
+
+.hidden {
+  visibility: hidden;
+}

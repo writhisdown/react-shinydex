@@ -2,7 +2,7 @@ import React from "react";
 
 import styles from "./Button.module.scss";
 
-type ButtonProps = React.HTMLAttributes<HTMLButtonElement> & {
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   className?: string,
   handleClick: React.MouseEventHandler<HTMLButtonElement>,
   children: React.ReactNode

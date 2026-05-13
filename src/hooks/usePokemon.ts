@@ -1,16 +1,21 @@
 import { useQueries } from "@tanstack/react-query";
-import { useState } from "react";
 
 import { type Pokemon, type PokemonTypePayload } from "@/types/PokemonTypes";
 
 import { ENDPOINT, PAGELIMIT, pokeIds } from "@/data/page";
 import { fetchPokemon } from "@/utils/fetcher";
 
-function usePokemon(pageLimit: number = PAGELIMIT) {
-  const [pageIndex, setPageIndex] = useState(0);
+function usePokemon(currentPage: number, pageLimit: number = PAGELIMIT) {
+
+  const lastPage = currentPage * pageLimit;
+  const firstPage = lastPage - pageLimit;
+
+  console.log("current page index:", currentPage);
+  console.log("last page index:", lastPage);
+  console.log("first page index:", firstPage);
 
   const results = useQueries({
-    queries: pokeIds.slice(pageIndex, pageIndex + pageLimit).map((id) => ({
+    queries: pokeIds.slice(firstPage, lastPage).map((id) => ({
       queryKey: ["pokemon", id],
       queryFn: () => fetchPokemon(ENDPOINT, id),
       keepPreviousData: true,
@@ -46,7 +51,7 @@ function usePokemon(pageLimit: number = PAGELIMIT) {
   console.log("data:", data);
   console.log("isError:", isError);
 
-  return [data, isLoading, isError, setPageIndex] as const;
+  return [data, isLoading, isError] as const;
 }
 
 export default usePokemon;

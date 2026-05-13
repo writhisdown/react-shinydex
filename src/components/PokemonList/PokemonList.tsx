@@ -1,17 +1,21 @@
-import usePokemon from "@/hooks/usePokemon"
+import type { Pokemon } from "@/types/PokemonTypes";
 
 import PokeCard from "@/components/PokeCard/PokeCard";
 
 import styles from "./PokemonList.module.scss";
 
-export default function PokemonList() {
-  const [data, isLoading, isError] = usePokemon();
+type PokemonListTypes = {
+  data: Pokemon[],
+  loading: boolean,
+  error: boolean
+}
 
-  if (isLoading) { 
+export default function PokemonList({data, loading, error}: PokemonListTypes) {
+  if (loading) { 
     return <span>Loading...</span>;
   }
 
-  if (isError) { 
+  if (error) { 
     return <span>Something went wrong</span>;
   }
 
