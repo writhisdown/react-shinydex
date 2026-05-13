@@ -1,0 +1,27 @@
+$card-radius: 1.25rem; // 20px
+$card-height: 16.3rem; // 206.8px - equivalent poke card height
+$card-icon-size: 4rem; // 64px
+
+.fallback-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: var(--spacing-sm);
+  border-radius: $card-radius;
+  padding: var(--spacing-md) var(--spacing-sm);
+  background: var(--clr-white);
+  animation: fadeIn 800;
+  color: var(--clr-background);
+  height: $card-height;
+}
+
+.fallback-card__placeholder-icon {
+  width: $card-icon-size;
+  height: auto;
+}
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
