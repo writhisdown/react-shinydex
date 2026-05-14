@@ -43,9 +43,9 @@ v1 | v2
 - **For a detailed test output**: run `npx playwright show-report`
 
 ## TODOs:
-- add search feature
-- add filter feature
-- responsive pagination
-- improve error handling
-- smooth out layout shifts when data is loading
-- update tests
+- [ ] add search feature
+- [ ] add filter feature
+- [ ] responsive pagination
+- [ ] improve error handling
+- [ ] smooth out layout shifts when data is loading
+- [ ] update tests
