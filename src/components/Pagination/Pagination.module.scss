@@ -4,8 +4,7 @@ $pagination-width: 50rem; // 800px
   max-width: $pagination-width;
   width: 100%;
   margin-top: var(--spacing-xl);
-  display: grid;
-  justify-self: center;
+  margin-inline: auto;
 }
 
 .pagination__list {
