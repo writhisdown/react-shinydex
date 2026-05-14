@@ -1,6 +1,7 @@
 @use "../../styles/breakpoints.scss" as *;
 
 $shadow: 2px 2px 12px var(--clr-shadow);
+$card-height: 16.3rem; // 206.8px - min height when all data is rendered
 
 .poke-card,
 .poke-card__type,
@@ -18,6 +19,7 @@ $shadow: 2px 2px 12px var(--clr-shadow);
   border-radius: 1.25rem; // 20px
   padding: var(--spacing-md) var(--spacing-sm);
   background: var(--clr-white);
+  min-height: $card-height;
   animation: fadeIn 800;
 }
 

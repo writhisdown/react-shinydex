@@ -1,5 +1,7 @@
 import type { Pokemon } from "@/types/PokemonTypes";
 
+import { PAGELIMIT } from "@/data/page";
+
 import PokeCard from "@/components/PokeCard/PokeCard";
 import FallbackCard from "@/components/FallbackCard/FallbackCard";
 
@@ -11,22 +13,30 @@ type PokemonListTypes = {
   error: boolean
 }
 
-export default function PokemonList({data, loading, error}: PokemonListTypes) {
-  if (loading) { 
-    return <span>Loading...</span>;
-  }
+const fallbackItems = Array.from({length: PAGELIMIT}, (_, index) => index + 1);
 
+export default function PokemonList({data, loading, error}: PokemonListTypes) {
   if (error) { 
     return <span>Something went wrong</span>;
   }
 
+  if (loading) { 
+    return (
+      <ul className={styles.pokemon}>
+        {fallbackItems.map((item) => (
+          <li key={item}>
+            <FallbackCard/>
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
   return (
     <ul className={styles.pokemon}>
-      <FallbackCard/>
-
       {data.map((item) => (
         <li key={item.id}>
-          <PokeCard data={item}/>
+          <PokeCard data={item} />
         </li>
       ))}
     </ul>

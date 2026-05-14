@@ -6,12 +6,14 @@ import Badge from "@/components/Badge/Badge";
 import styles from "./PokeCard.module.scss";
 import classNames from "classnames/bind";
 
+type PokeCardProps = { data: Pokemon };
+
 const cx = classNames.bind(styles);
 
 const altTextBase = "Small front facing pixel artwork of";
 const altTextShiny = "Small front facing pixel artwork featuring the shiny variant of";
 
-export default function PokeCard({ data }: {data: Pokemon}) {
+export default function PokeCard({ data }: PokeCardProps) {
   const {id, name, artwork, artwork_alt, type} = data;
 
   console.log('type:', type);
