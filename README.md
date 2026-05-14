@@ -1,73 +1,51 @@
-# React + TypeScript + Vite
+# Pokedex 2.0
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## A collection of the first 151 Pokemon, with a dash of shiny via the REST [PokeApi](https://pokeapi.co/). A modern take on the original [shinydex repo](https://github.com/writhisdown/shinydex)
 
-Currently, two official plugins are available:
+This an exercise to enhance the original [demo](https://shinydx.com/), written in vanilla JS, using modern React & Vite.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+v1 | v2
+--- | --- 
+![original](https://assets.codepen.io/378806/Screenshot%202026-05-14%20at%207.00.56%E2%80%AFPM.png) | ![new preview 1](https://assets.codepen.io/378806/Screenshot%202026-05-14%20at%206.32.43%E2%80%AFPM.png)
+. | ![new preview 2](https://assets.codepen.io/378806/Screenshot%202026-05-14%20at%206.32.55%E2%80%AFPM.png)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Key Improvements
 
-## Expanding the ESLint configuration
+- Parallel data loading for faster rendering
+- Loading and error states
+- Pagination
+- End to end testing
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Stack
+- [React 19](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tanstack Query v5](https://tanstack.com/query/latest)
+- [SASS](https://sass-lang.com/)
+- [Feather Icons](https://github.com/feathericons/react-feather)
+- [Playwright](https://playwright.dev/)
+- [Vite](https://vite.dev/)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Getting started
+**Via local development**
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- clone repo
+- in a new terminal `cd` into project folder
+- run `npm i` to install dependencies
+- visit http://localhost:5173/
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Testing
+- **For test output via the command line**: run `npx playwright test`
+- **To view test via a browser window**: run `npx playwright test --ui`
+- **For a detailed test output**: run `npx playwright show-report`
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## TODOs:
+- add search feature
+- add filter feature
+- responsive pagination
+- improve error handling
+- smooth out layout shifts when data is loading
+- update tests
